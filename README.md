@@ -9,9 +9,13 @@ Required libraries:
 +GLM
 
 This project is cross-platform, but only tested on linux.
+
 To compile(LINUX):
+
 -Clone the main branch and locate into it
+
 -Run that command:
+
 -->g++ *.cpp -lGL -lglfw -lGLEW -o main && ./main
 
 
@@ -21,7 +25,11 @@ Merhaba, bu proje, boş zamanlarımda tasarlayıp geliştirdiğim deneysel bir U
 
 
 Bu proje platform-bağımsız'dır. Fakat sadece linux'da test edilmiştir.
+
 Derlemek için(LINUX):
+
 -Main dalını klonlayın ve bu klasöre girin
+
 -Şu komudu çalıştırın:
+
 -->g++ *.cpp -lGL -lglfw -lGLEW -o main && ./main
