@@ -1,7 +1,7 @@
 # Bunny_UI
 EN
 
-Hi, this project is an experimental UI library, designed and develop on my spare time. The scope is this library is simplicity and robustness. It follows OOP principles, and aiming clarity with that idea. Another purpose is that using native GPU resources for speed. Yet, still on development stage.
+Hi, this project is an experimental UI library, designed and developed on my spare time. The scope is this library is simplicity and robustness. It follows OOP principles, and aiming clarity with that idea. Another purpose is that using native GPU resources for speed. Yet, still on development stage.
 
 Required libraries:
 +GLFW
