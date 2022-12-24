@@ -6,8 +6,6 @@ class Drawable {
 
 public:
 
-    Drawable() = default;
-
     virtual void draw() = 0;
 
 
