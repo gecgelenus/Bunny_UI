@@ -80,14 +80,6 @@ void Rectangle::setRectangle(float x, float y, float width, float height) {
     };
 
 
-    for(int i = 0; i < data.size(); i++){
-        std::cout << data[i] << " ";
-        
-        if(i%3 == 2)
-            std::cout << std::endl;
-
-    }
-
     setData(data);
 }
 
