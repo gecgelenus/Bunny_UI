@@ -2,6 +2,8 @@
 #include "Util.hpp"
 #include "Shader.hpp"
 #include "ShaderProgram.hpp"
+#include <GL/glew.h>
+#include <iostream>
 
 Frame::Frame(std::string name, int width, int height)
 {
@@ -14,7 +16,9 @@ Frame::Frame(std::string name, int width, int height)
         return;
     }
 
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     window = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
+    
     if(!window){
         std::cout << "Failed to create window" << std::endl;
         glfwTerminate();
@@ -58,6 +62,55 @@ GLuint Frame::getShaderProgram() const
 GLFWwindow* Frame::getWindow() const
 {
     return window;
+}
+
+void Frame::addDrawable(Drawable* drawable)
+{
+    drawables.push_back(drawable);
+}
+
+
+void Frame::render()
+{
+    glClearColor(clearColor.r, clearColor.g, clearColor.b, clearColor.a);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    for(Drawable* drawable : drawables){
+        drawable->draw();
+    }
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+}
+
+
+void Frame::setClearColor(glm::vec4 color)
+{
+    clearColor = color;
+   
+}
+
+
+void Frame::removeDrawable(Drawable* drawable)
+{
+    for(int i = 0; i < drawables.size(); i++){
+        if(drawables[i] == drawable){
+            drawables.erase(drawables.begin() + i);
+        }
+    }
+
+
+}
+
+
+int Frame::getWidth()
+{
+    return this->width;
+}
+
+int Frame::getHeight()
+{
+    return this->height;
 }
 
 
