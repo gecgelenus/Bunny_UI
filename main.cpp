@@ -11,21 +11,6 @@
 #include "Frame.hpp"
 
 
-// vertex data for our triangle
-const std::vector<GLfloat> vertices = {
-    //first triangle
-    -0.5f, 0.5f, 0.0f,
-    -0.5f, -0.5f, 0.0f,
-    0.5f,  0.5f, 0.0f,
-    //second triangle
-    -0.5f, -0.5f, 0.0f,
-    0.5f, 0.5f, 0.0f,
-    0.5f,  -0.5f, 0.0f
-};
-
-
-
-
 
 int main(){
    
@@ -35,9 +20,11 @@ int main(){
 
     Rectangle* rectangle = new Rectangle(frame);
     rectangle->setRectangle(400, 300, 100, 100);
+    rectangle->setColor(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 
     Rectangle* rectangle2 = new Rectangle(frame);
     rectangle2->setRectangle(200, 300, 50, 200);
+    rectangle2->setColor(glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
 
 
     frame.addDrawable(rectangle);
